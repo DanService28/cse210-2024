@@ -12,13 +12,14 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
+        _entries.Add(newEntry);
     }
 
     public void DisplayAll()
     {
-        foreach (Entry entrys in _entries)
+        foreach (Entry entry in _entries)
         {
-            entrys.Display();
+            entry.Display();
         }
     }
 
@@ -29,13 +30,20 @@ public class Journal
         {   
             foreach(Entry entry in _entries)
             {
-                outputFile.WriteLine(entry);
+                outputFile.WriteLine($"{entry._date}----{entry._promptText}---{entry._entryText}");
             }
         }
     }
     public void LoadFromFile(string file)
     {
+        string filename = file;
+        string [] lines = System.IO.File.ReadAllLines(filename);
 
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("---");
+            
+        }
     }
     
 

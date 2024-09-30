@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
@@ -16,7 +17,7 @@ class Program
 
             //Display the main menu and repeat until the user choise option #5 
             Console.WriteLine("Please select one of the following choises: \n1. Write.\n2. Display."  +
-            "\n3. Save.\n4. Load.\n5. Quit. \nWhat would you like to do? ");
+            "\n3. Load.\n4. Save.\n5. Quit. \nWhat would you like to do? ");
 
             userPrompt = int.Parse(Console.ReadLine());
 
@@ -33,11 +34,11 @@ class Program
                 newEntry._promptText = prompt.GetRandomPrompt();
                 Console.WriteLine(newEntry._promptText);
 
-                //Ask for a answer
+                //Ask for an answer
                 newEntry._entryText = Console.ReadLine();
 
 
-                theJournal._entries.Add(newEntry);    
+                theJournal.AddEntry(newEntry);  
             }
 
 
@@ -47,8 +48,21 @@ class Program
                 theJournal.DisplayAll();
             }
 
+
             if (userPrompt ==  3)
             {
+                //
+                Console.WriteLine("What is the filename?");
+                string userFile = Console.ReadLine();
+
+                theJournal.LoadFromFile(userFile);
+            }
+
+
+
+            if (userPrompt ==  4)
+            {   
+                //Ask for a filename and call the method SavetoFile.
                 Console.WriteLine("What is the filename?");
                 string userFile = Console.ReadLine();
 
