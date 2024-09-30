@@ -39,6 +39,8 @@ public class Journal
         string filename = file;
         string [] lines = System.IO.File.ReadAllLines(filename);
 
+        Console.WriteLine("Loading file...");
+
         foreach (string line in lines)
         {
             Entry entry = new Entry();

@@ -32,18 +32,21 @@ class Program
                 //Use the GetRamdonPrompt to iterate with the prompt attribute and display it to the user
                 PromptGenerator prompt = new PromptGenerator();
                 newEntry._promptText = prompt.GetRandomPrompt();
-                Console.WriteLine(newEntry._promptText);
+                Console.WriteLine($"> {newEntry._promptText}");
 
                 //Ask for an answer
                 newEntry._entryText = Console.ReadLine();
 
+                Console.WriteLine();
 
+                //Adding entries with a method from Journal class
                 theJournal.AddEntry(newEntry);  
             }
 
 
             if (userPrompt ==  2)
             {   
+                Console.WriteLine("\nYou have recently added the following:\n");
                 //Display the list with all the entris.
                 theJournal.DisplayAll();
             }
