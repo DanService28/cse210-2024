@@ -54,7 +54,7 @@ class Program
 
             if (userPrompt ==  3)
             {
-                //
+                //The user has to provided a filename with ".txt"
                 Console.WriteLine("What is the filename?");
                 string userFile = Console.ReadLine();
 
