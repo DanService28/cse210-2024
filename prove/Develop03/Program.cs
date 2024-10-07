@@ -7,15 +7,15 @@ class Program
         Reference reference = new Reference("1 Nefi", 3 , 7);
 
         Scripture scripture = new Scripture(reference, "Y acontecio que yo Nefi le dije a mi padre: Iré y Haré lo que el Señor" +
-        "ha mandado por que sé que el nunca da mandamientos a los hijos de los hombres sin prepararles la vía, para que" +
-        "cumplan lo que les ha mandado.");
+        " ha mandado por que sé que el nunca da mandamientos a los hijos de los hombres sin prepararles la vía, para que" +
+        " cumplan lo que les ha mandado.");
 
         string userPrompt = string.Empty;
         Console.WriteLine(scripture.GetDisplayText());
         Console.WriteLine();
         
 
-        while (userPrompt != "quit"  || scripture.IsCompletelyHidden()) 
+        while (userPrompt != "quit"  && !scripture.IsCompletelyHidden()) 
         {
             
             
@@ -28,6 +28,17 @@ class Program
                 Console.Clear(); 
                 Console.WriteLine(scripture.GetDisplayText()); 
             }
+
+            if (scripture.IsCompletelyHidden())
+        {
+            Console.Clear();
+            Console.WriteLine("The scripture is completely hidden. Exiting the program.");
+        }
+            else if (userPrompt == "quit")
+        {
+            Console.Clear();
+            Console.WriteLine("Exiting the program.");
+        }
         }
     }
 }
