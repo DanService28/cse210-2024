@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        Activity newActivity = new Activity("Math","Fractions with you", 18);
+        newActivity.DisplayStartingMessage();
+        
+        newActivity.DisplayEndingMessage();
+        newActivity.ShowCountDown(5);
+        
     }
 }
