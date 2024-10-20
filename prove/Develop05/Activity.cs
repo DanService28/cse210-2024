@@ -3,8 +3,8 @@ using System;
 public class Activity
 {
     private string _name;
-    private string _description;
-    private int _duration;
+    protected string _description;
+    protected int _duration;
 
     public Activity(string name, string description, int duration)
     {
@@ -15,12 +15,16 @@ public class Activity
 
     public void DisplayStartingMessage()
     {
-        Console.WriteLine($"Welcome to the {_name}.\n \n{_description}.");  
+        Console.WriteLine($"Welcome to the {_name}.\n \n{_description}.\n");  
+        
+        Console.Write("How long in seconds would like for this activity?: ");
+        _duration = int.Parse(Console.ReadLine());
     }
 
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!");
+        ShowSpinner(5);
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
     }
 
