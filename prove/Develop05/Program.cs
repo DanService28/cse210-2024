@@ -19,13 +19,13 @@ class Program
 
             if(userActivity == 1)
             {   
-                BreathingActivity activity1 = new BreathingActivity(-1);
+                BreathingActivity activity1 = new BreathingActivity();
                 activity1.Run();
             }
 
             if(userActivity == 2)
             {   
-                BreathingActivity activity1 = new BreathingActivity(-1);
+                BreathingActivity activity1 = new BreathingActivity();
                 activity1.Run();
             }
             
