@@ -32,8 +32,8 @@ public class ListingActivity : Activity
 
     public void GetRamdonPrompt()
     {   
-        Random ran = new Random();
-        string prompt = _prompts[ran.Next(_prompts.Count)];
+        Random rand = new Random();
+        string prompt = _prompts[rand.Next(_prompts.Count)];
         Console.WriteLine($"--- {prompt} ---");
     }
 

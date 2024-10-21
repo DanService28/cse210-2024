@@ -25,10 +25,15 @@ class Program
 
             if(userActivity == 2)
             {   
-                ListingActivity activity2 = new ListingActivity();
+                ReflectingActivity activity2 = new ReflectingActivity();
                 activity2.Run();
             }
             
+             if(userActivity == 3)
+            {   
+                ListingActivity activity3 = new ListingActivity();
+                activity3.Run();
+            }
             }
 
         
