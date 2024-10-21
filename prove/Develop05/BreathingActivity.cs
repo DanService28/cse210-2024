@@ -24,7 +24,7 @@ public class BreathingActivity : Activity
         DisplayStartingMessage();
 
         Console.WriteLine("Get Ready.");
-        ShowSpinner(5);
+        ShowSpinner(3);
         Console.WriteLine();
 
         while(i < _duration)
@@ -34,6 +34,6 @@ public class BreathingActivity : Activity
         }
 
         DisplayEndingMessage();
-        ShowSpinner(5);
+        ShowCountDown(5);
     }
 }

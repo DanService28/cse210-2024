@@ -18,13 +18,15 @@ public class Activity
         
         Console.Write("How long in seconds would like for this activity?: ");
         _duration = int.Parse(Console.ReadLine());
+        Console.Clear();
     }
 
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!");
-        ShowSpinner(5);
+        ShowSpinner(3);
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
+        Console.Write("Returning to the main menu: ");
     }
 
     public void ShowSpinner (int seconds)
@@ -43,7 +45,7 @@ public class Activity
         {
             string spin = spinner[i];
             Console.Write(spin);
-            Thread.Sleep(900);
+            Thread.Sleep(700);
             Console.Write("\b \b");
 
             i++;

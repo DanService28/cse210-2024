@@ -43,12 +43,12 @@ public class ReflectingActivity : Activity
 
     public void DisplayPrompt()
     {
-        Console.WriteLine($"      ---{GetRandomPrompt()}---");
+        Console.WriteLine($"   ---{GetRandomPrompt()}---");
     }
 
     public void DisplayQuestion()
     {
-        Console.WriteLine(GetRandomQuestion());
+        Console.Write(GetRandomQuestion());
     }
 
 
@@ -69,8 +69,8 @@ public class ReflectingActivity : Activity
         Console.WriteLine("Now ponder on each of the following question as they related to this experience.");
         Console.Write("You may begin in: ");
         ShowCountDown(5);
-        Console.WriteLine();
-
+        Console.Clear();
+        
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
 
@@ -78,10 +78,11 @@ public class ReflectingActivity : Activity
         {
             DisplayQuestion();
             ShowSpinner(8);
+            Console.WriteLine();
         }
         
         Console.WriteLine();
         DisplayEndingMessage();
-        ShowSpinner(5);
+        ShowCountDown(5);
     }
 }
