@@ -25,6 +25,8 @@ public class Journal
 
     public void SaveToFile(string file)
     {
+        try
+        {
         string filename = file;
         using (StreamWriter outputFile = new StreamWriter(filename))
         {   
@@ -32,6 +34,11 @@ public class Journal
             {
                 outputFile.WriteLine($"{entry._date}---{entry._promptText}---{entry._entryText}");
             }
+        }
+        }
+          catch (Exception ex)
+        {
+        Console.WriteLine($"Error saving file: {ex.Message}");
         }
     }
     public void LoadFromFile(string file)

@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop06 World!");
+        GoalManager firstAttempt = new GoalManager(0);
+            firstAttempt.Start();
     }
 }
